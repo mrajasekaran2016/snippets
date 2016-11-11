@@ -1,0 +1,6 @@
+Find all MSSQL objects for specific text on a select DB
+=======================================================
+SELECT DISTINCT a.[name]
+FROM sysobjects a
+INNER JOIN syscomments b on a.id = b.id
+WHERE b.[text] LIKE '%search-term%'
